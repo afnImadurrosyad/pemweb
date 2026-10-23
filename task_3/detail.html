@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pendaftar — Seminar Nasional Teknologi ITERA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <div>
+          <p class="brand-name">Seminar Nasional Teknologi</p>
+          <p class="brand-sub">Institut Teknologi Sumatera</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="pendaftaran.html" class="nav-link">Pendaftaran</a>
+        <a href="detail.html" class="nav-link active">Detail Pendaftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-single">
+
+    <section class="intro">
+      <p class="eyebrow">Detail Informasi Pendaftar</p>
+      <h1>Pendaftaran diterima</h1>
+      <p class="lede">
+        Berikut ringkasan data pendaftar. Pada tugas ini halaman detail bersifat
+        <strong>dummy</strong>: data ditampilkan sebagai contoh tampilan, sedangkan alur
+        pengiriman datanya didesain melalui query string dari halaman pendaftaran.
+      </p>
+      <p class="status-line"><span class="badge badge-ok">Status: Terdaftar</span>
+      <span class="badge badge-soft">Kode: REG-2026-0125</span></p>
+    </section>
+
+    <!-- Microformat h-card: data pendaftar terstruktur yang mudah dibaca mesin -->
+    <section class="card h-card" aria-labelledby="judul-detail">
+      <h2 id="judul-detail">Data Pendaftar <span class="p-name hidden">Afnan Imadurrosyad</span></h2>
+
+      <table class="detail-table">
+        <caption>Ringkasan pendaftaran Seminar Nasional Teknologi ITERA</caption>
+        <tbody>
+          <tr>
+            <th scope="row">Nama Lengkap</th>
+            <td>Afnan Imadurrosyad</td>
+          </tr>
+          <tr>
+            <th scope="row">NIM</th>
+            <td>124140125</td>
+          </tr>
+          <tr>
+            <th scope="row">Tanggal Lahir</th>
+            <td>20 Mei 2005</td>
+          </tr>
+          <tr>
+            <th scope="row">Jenis Kelamin</th>
+            <td>Laki-laki</td>
+          </tr>
+          <tr>
+            <th scope="row">Program Studi</th>
+            <td>Informatika</td>
+          </tr>
+          <tr>
+            <th scope="row">Kota Asal</th>
+            <td>Bandar Lampung</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td class="p-email">afnan.124140125@student.itera.ac.id</td>
+          </tr>
+          <tr>
+            <th scope="row">Alamat</th>
+            <td>Jl. Terusan Ryacudu, Way Huwi, Jati Agung, Lampung Selatan</td>
+          </tr>
+          <tr>
+            <th scope="row">Sesi Seminar</th>
+            <td>Pagi (08.00–10.00)</td>
+          </tr>
+          <tr>
+            <th scope="row">Topik Minat</th>
+            <td>Pengembangan Web, Kecerdasan Buatan</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total Biaya</th>
+            <td><strong>Gratis</strong> (mahasiswa ITERA)</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="info-box">
+        <h2>Query string yang membawa data ke halaman ini</h2>
+        <p>Saat formulir pendaftaran dikirim (method GET), browser membuka halaman ini dengan URL:</p>
+        <p><code class="qs">detail.html?nama=Afnan+Imadurrosyad&amp;nim=124140125&amp;tanggal_lahir=2005-05-20&amp;jenis_kelamin=Laki-laki&amp;prodi=Informatika&amp;kota_asal=Bandar+Lampung&amp;email=afnan.124140125%40student.itera.ac.id&amp;sesi=Pagi+%2808.00-10.00%29&amp;minat=Pengembangan+Web&amp;minat=Kecerdasan+Buatan&amp;persetujuan=setuju</code></p>
+        <p class="hint">Setiap parameter berasal dari atribut <code>name</code> pada kontrol form di halaman pendaftaran.</p>
+      </div>
+
+      <div class="form-actions">
+        <a class="btn btn-ghost" href="pendaftaran.html">Kembali ke Formulir</a>
+        <a class="btn btn-primary" href="pendaftaran.html">Daftar Peserta Lain</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Seminar Nasional Teknologi ITERA &middot; Tugas Individu 3 &mdash; Pengembangan Aplikasi Web</p>
+    <p class="footer-name">Afnan Imadurrosyad &middot; 124140125 &middot; Kelas RB</p>
+  </footer>
+
+</body>
+</html>
