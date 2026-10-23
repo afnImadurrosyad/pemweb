@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran — Seminar Nasional Teknologi ITERA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <div>
+          <p class="brand-name">Seminar Nasional Teknologi</p>
+          <p class="brand-sub">Institut Teknologi Sumatera</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="pendaftaran.html" class="nav-link active">Pendaftaran</a>
+        <a href="detail.html" class="nav-link">Detail Pendaftar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid">
+
+    <section class="intro">
+      <p class="eyebrow">Formulir Pendaftaran</p>
+      <h1>Daftar sebagai peserta seminar</h1>
+      <p class="lede">
+        Isi data diri pada formulir di samping. Setelah tombol <strong>Kirim Pendaftaran</strong>
+        ditekan, browser akan meneruskan data ke halaman detail pendaftar melalui
+        <em>query string</em> pada URL (method GET).
+      </p>
+
+      <div class="info-box">
+        <h2>Alur pengiriman data</h2>
+        <ol class="steps">
+          <li>Peserta mengisi formulir pendaftaran.</li>
+          <li>Browser menyusun pasangan <code>name=value</code> dari setiap kontrol form.</li>
+          <li>Data dikirim ke <code>detail.html</code> sebagai query string, contoh:
+            <code class="qs">detail.html?nama=Afnan+Imadurrosyad&amp;nim=124140125&amp;prodi=Informatika</code>
+          </li>
+          <li>Halaman detail menampilkan informasi pendaftar (data dummy pada tugas ini).</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="judul-form">
+      <h2 id="judul-form">Data Pendaftar</h2>
+
+      <!-- Form method GET: data diteruskan ke detail.html lewat query string -->
+      <form id="form-pendaftaran" action="detail.html" method="get">
+
+        <fieldset>
+          <legend>Identitas</legend>
+
+          <div class="field">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="cth: Afnan Imadurrosyad"
+                   pattern="[A-Za-z ]{3,}" title="Minimal 3 karakter, hanya huruf dan spasi" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="nim">NIM</label>
+              <input type="text" id="nim" name="nim" placeholder="cth: 124140125"
+                     pattern="[0-9]{9}" title="NIM terdiri dari 9 digit angka" required>
+            </div>
+            <div class="field">
+              <label for="tanggal_lahir">Tanggal Lahir</label>
+              <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Jenis Kelamin</span>
+            <div class="choice-group">
+              <label class="choice">
+                <input type="radio" name="jenis_kelamin" value="Laki-laki" required> Laki-laki
+              </label>
+              <label class="choice">
+                <input type="radio" name="jenis_kelamin" value="Perempuan"> Perempuan
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="prodi">Program Studi</label>
+            <select id="prodi" name="prodi" required>
+              <option value="">— Pilih program studi —</option>
+              <optgroup label="Sains">
+                <option value="Matematika">Matematika</option>
+                <option value="Fisika">Fisika</option>
+                <option value="Kimia">Kimia</option>
+              </optgroup>
+              <optgroup label="Teknologi">
+                <option value="Informatika">Informatika</option>
+                <option value="Teknik Elektro">Teknik Elektro</option>
+                <option value="Teknik Sipil">Teknik Sipil</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="kota_asal">Kota Asal</label>
+            <input type="text" id="kota_asal" name="kota_asal" list="daftar-kota"
+                   placeholder="cth: Bandar Lampung">
+            <datalist id="daftar-kota">
+              <option value="Bandar Lampung"></option>
+              <option value="Jakarta"></option>
+              <option value="Palembang"></option>
+              <option value="Bandung"></option>
+              <option value="Medan"></option>
+            </datalist>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Kontak &amp; Akun</legend>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="cth: nama@student.itera.ac.id" required>
+          </div>
+
+          <div class="field">
+            <label for="kata_sandi">Kata Sandi Akun</label>
+            <input type="password" id="kata_sandi" name="kata_sandi" placeholder="Minimal 8 karakter" minlength="8" required>
+          </div>
+
+          <div class="field">
+            <label for="alamat">Alamat</label>
+            <textarea id="alamat" name="alamat" rows="3" placeholder="Tulis alamat lengkap"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pilihan Seminar</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="sesi">Sesi Seminar</label>
+              <select id="sesi" name="sesi" required>
+                <option value="">— Pilih sesi —</option>
+                <option value="Pagi (08.00-10.00)">Pagi (08.00–10.00)</option>
+                <option value="Siang (13.00-15.00)">Siang (13.00–15.00)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="waktu_kedatangan">Rencana Jam Datang</label>
+              <input type="time" id="waktu_kedatangan" name="waktu_kedatangan">
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Topik Minat (boleh lebih dari satu)</span>
+            <div class="choice-group wrap">
+              <label class="choice"><input type="checkbox" name="minat" value="Pengembangan Web"> Pengembangan Web</label>
+              <label class="choice"><input type="checkbox" name="minat" value="Kecerdasan Buatan"> Kecerdasan Buatan</label>
+              <label class="choice"><input type="checkbox" name="minat" value="Sains Data"> Sains Data</label>
+              <label class="choice"><input type="checkbox" name="minat" value="Jaringan Komputer"> Jaringan Komputer</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="dokumen">Unggah KTM / Bukti Mahasiswa (opsional)</label>
+            <input type="file" id="dokumen" name="dokumen" accept=".pdf,.jpg,.png">
+            <p class="hint">Dengan method GET, yang terkirim pada query string hanya nama berkasnya.</p>
+          </div>
+        </fieldset>
+
+        <label class="choice agree">
+          <input type="checkbox" name="persetujuan" value="setuju" required>
+          Saya menyatakan data yang diisi benar dan bersedia mengikuti ketentuan seminar.
+        </label>
+
+        <div class="form-actions">
+          <button type="reset" class="btn btn-ghost">Atur Ulang</button>
+          <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Seminar Nasional Teknologi ITERA &middot; Tugas Individu 3 &mdash; Pengembangan Aplikasi Web</p>
+    <p class="footer-name">Afnan Imadurrosyad &middot; 124140125 &middot; Kelas RB</p>
+  </footer>
+
+</body>
+</html>
