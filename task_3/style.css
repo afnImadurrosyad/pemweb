@@ -1,0 +1,455 @@
+/* ============================================================
+   style.css — Seminar Nasional Teknologi ITERA
+   Tugas Individu 3: Tabel, Formulir, Layout dan Web Media
+
+   Jenis selector yang digunakan (lebih dari 3):
+   1. Element selector    : body, h1, table, input, select
+   2. Class selector      : .card, .btn, .field, .badge
+   3. ID selector         : #form-pendaftaran, #judul-form
+   4. Attribute selector  : input[type="checkbox"], input[type="file"]
+   5. Pseudo-class        : :hover, :focus, :nth-child(even)
+   6. Descendant selector : .detail-table th, .site-nav a
+   ============================================================ */
+
+/* ---------- 1. Element selector: gaya dasar elemen ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background-color: #eef3f8;
+  color: #1c2b3a;
+  line-height: 1.55;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: #103a5c;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 1.2rem;
+  color: #103a5c;
+}
+
+fieldset {
+  border: 1px solid #cfdce8;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 0 0 18px;
+  background-color: #fbfdff;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 700;
+  color: #0b5fa5;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #b9c9d8;
+  border-radius: 9px;
+  background-color: #ffffff;
+  font: inherit;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+}
+
+/* ---------- 2. Class selector: komponen ---------- */
+.site-header {
+  background-color: #103a5c;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(16, 58, 92, 0.35);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #f2a007;
+  color: #103a5c;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.brand-name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.brand-sub {
+  margin: 0;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
+
+.site-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-link {
+  color: #dbe9f5;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #d7e2ec;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(16, 58, 92, 0.10);
+  padding: 26px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0b5fa5;
+}
+
+.lede {
+  margin: 0 0 18px;
+  color: #40566b;
+}
+
+.info-box {
+  background-color: #fdf6e3;
+  border: 1px solid #ecd9a0;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+
+.info-box h2 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.steps li {
+  margin-bottom: 6px;
+}
+
+.qs {
+  display: inline-block;
+  word-break: break-all;
+  background-color: #103a5c;
+  color: #ffe9b0;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 0.82rem;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.choice-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.choice-group.wrap {
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 500;
+  margin: 0;
+  cursor: pointer;
+}
+
+.choice.agree {
+  display: flex;
+  align-items: flex-start;
+  background-color: #eef6ee;
+  border: 1px solid #cfe3cf;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  color: #6b7f92;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.94rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #0b5fa5;
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background-color: #e7eef5;
+  color: #103a5c;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.badge-ok {
+  background-color: #dff2df;
+  color: #1d6b1d;
+  border: 1px solid #a9d3a9;
+}
+
+.badge-soft {
+  background-color: #e7eef5;
+  color: #103a5c;
+  border: 1px solid #c3d3e2;
+}
+
+.status-line {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 4px;
+}
+
+.site-footer {
+  text-align: center;
+  color: #5c7186;
+  font-size: 0.85rem;
+  padding: 26px 16px 34px;
+}
+
+.site-footer p {
+  margin: 2px 0;
+}
+
+.footer-name {
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- Layout: CSS Grid untuk halaman ---------- */
+.page-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 22px 10px;
+  display: grid;
+  grid-template-columns: minmax(280px, 5fr) minmax(340px, 7fr);
+  gap: 26px;
+  align-items: start;
+}
+
+.page-single {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px 22px 10px;
+}
+
+/* ---------- 3. ID selector ---------- */
+#form-pendaftaran {
+  margin-top: 4px;
+}
+
+#judul-form {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f2a007;
+}
+
+#judul-detail {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f2a007;
+}
+
+/* ---------- 4. Attribute selector ---------- */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  accent-color: #0b5fa5;
+  margin: 0;
+}
+
+input[type="file"] {
+  padding: 8px 10px;
+  background-color: #f4f8fb;
+  border-style: dashed;
+}
+
+/* ---------- 5. Pseudo-class & tabel ---------- */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background-color: #f2a007;
+  color: #103a5c;
+}
+
+.btn-primary:hover {
+  background-color: #084a82;
+}
+
+.btn-ghost:hover {
+  background-color: #d7e4ef;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0b5fa5;
+  box-shadow: 0 0 0 3px rgba(11, 95, 165, 0.18);
+}
+
+/* 6. Descendant selector: sel di dalam tabel detail */
+.detail-table caption {
+  text-align: left;
+  font-weight: 700;
+  color: #103a5c;
+  padding: 0 0 10px;
+}
+
+.detail-table th,
+.detail-table td {
+  border: 1px solid #cfdce8;
+  padding: 11px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.detail-table th {
+  width: 210px;
+  background-color: #eaf2f9;
+  color: #103a5c;
+}
+
+/* Zebra stripes */
+.detail-table tbody tr:nth-child(even) {
+  background-color: #f6fafd;
+}
+
+/* Hover effect pada baris tabel */
+.detail-table tbody tr:hover {
+  background-color: #fdf3d8;
+}
+
+.detail-table tfoot th,
+.detail-table tfoot td {
+  background-color: #fdf6e3;
+}
+
+/* ---------- Responsif ---------- */
+@media (max-width: 820px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-table th {
+    width: 130px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
